@@ -6,27 +6,6 @@ Additionally, two IAM users are to be provisioned:
 	•	User A: Can Read/Write to Bucket A
 	•	User B: Can Read-Only from Bucket B
 
-**Architecture Diagram**
-                +----------------------+
-                | S3 Bucket A          |
-                | (Upload .jpg)        |
-                +----------------------+
-                          |
-                    [S3 Trigger]
-                          |
-                   invokes Lambda
-                          |
-                +----------------------+
-                | Lambda Function       |
-                | - Removes EXIF        |
-                | - Uploads to Bucket B |
-                +----------------------+
-                          |
-                +----------------------+
-                | S3 Bucket B          |
-                | (Clean .jpg output)  |
-                +----------------------+
-
 **Technologies Used**
 	•	Terraform – Infrastructure as Code
 	•	AWS Services:
